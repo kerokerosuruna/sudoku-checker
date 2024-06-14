@@ -82,6 +82,12 @@ int main(int argc, char **argv){
         }
     }
     std::ifstream input("board.txt");
+    if (input.fail()){
+        if (silent == false){
+            std::cout << "File not found\n";
+        }
+        return 1;
+    }
     int * p = &board[0][0];
     int number_of_rows = 0;
     std::string number;
